@@ -1,0 +1,32 @@
+$primary-1: #202020;
+$primary-2: #f5bd10;
+$primary-3: #ffffff;
+
+$gray-1: #f7f7f7;
+$gray-2-border: #e1e1e1;
+$gray-3: #9d9d9d;
+$gray-4: #acacac;
+$gray-5: #645e5e;
+$gray-6: #8e8686;
+$gray-7: rgba(0, 0, 0, 0.5);
+$gray-8: rgba(0, 0, 0, 0.2);
+
+$blue-1: #0685ca;
+$red: #ff0000;
+$orange: orange;
+
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$box-shadow-color-1: rgba(255, 255, 255, 0.5);
+
+$green: green;
+$flex-1: 1;
+
+$breakpoints: (
+  sm: 576px,
+  mdC: 767px,
+  md: 768px,
+  normal: 991px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

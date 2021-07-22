@@ -1,0 +1,56 @@
+extend ../base/_base.pug
+block variables
+    - var titleHTMl = 'Danh sách sản phẩm'
+block content
+    //- a(href="./error-page.html") text
+    .wrapper 
+        .container     
+            +dataBreadcrumb("Trang chủ", "Danh sách sản phẩm")
+
+            section.listProducts__categories.pb-5
+                .row
+                    .col-lg-3
+                        .row
+                            +listFilter("DANH MỤC SẢN PHẨM", listFilter, "", "X")                            
+                            +listFilter("TÌM THEO MỨC GIÁ", softPrice, "", "Y")                            
+                            +listFilter("TÌM THEO MÀU SẮC", softPrice, "", "Z")                            
+                            +listFilter("SẢN PHẨM KHUYẾN MÃI", softPrice, "Y", "")
+                    .col-lg-9
+                        .row.filter--list-product
+                            .col-lg-12.d-flex.justify-content-between.align-items-start.listProducts__select
+                                form.form-inline.form-select.w-100
+                                    .form-group.pr-5.align-items-baseline
+                                        label(for="selectProduct").mr-2 Sắp xếp theo: 
+                                        select.rounded-0.custom-select.form-control#selectProduct.pr-2
+                                            option Tên sản phẩm
+                                                - let option = 0
+                                                while option++ < 3
+                                                    option(value= option)= `Sản phẩm ${option}`
+                                    .form-group.align-items-baseline
+                                        label(for="selectProduct1").mr-2 Show: 
+                                        select.rounded-0.custom-select.form-control#selectProduct1
+                                            option 0
+                        .row
+                            .col-lg-12.position-relative
+                                ul.nav.listProduct__btn-view.mt-auto.position-absolute
+                                    li
+                                        a.active( data-toggle="tab" href="#home")
+                                            i.fas.fa-bars
+                                    li
+                                        a(data-toggle="tab" href="#menu1").ml-2
+                                            i.fas.fa-th
+                            .col-lg-12.pt-3
+                                .tab-content
+                                        #home.tab-pane.active
+                                            each item,index in newProduct2
+                                                if index < 10
+                                                    +product(item, "Y")
+                                        #menu1.tab-pane
+                                            .row
+                                                each item in newProduct2
+                                                    div.parent.col-lg-4.col-md-6
+                                                        +product(item, "")
+                        .row
+                            .col-lg-12.pb-4
+                                +pagination()                                
+                            

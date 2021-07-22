@@ -1,0 +1,18 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.cart__wrapper {
+  i:hover {
+    cursor: pointer;
+  }
+  margin: 4rem auto;
+  .button-group {
+    margin: 2rem 0;
+    .btn-form {
+      margin-right: 0;
+      &.active {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+extends ../base/_base.pug
+block variables
+    - var titleHTMl = 'Giỏ hàng'
+block content
+    .container
+        +dataBreadcrumb("Trang chủ", "Giỏ hàng")
+        .cart__wrapper           
+            +tableContent()
+            
+            .row
+                .col-md-6.offset-md-6.col-sm-6.offset-sm-6.mt-4
+                    .table-responsive        
+                        table.table.table-bordered            
+                            tbody
+                                tr                    
+                                    td Tổng tiền
+                                    td 6.850.000 đ                    
+                                tr                    
+                                    td Thuế
+                                    td 685.000 đ
+                                tr                    
+                                    td Thanh toán
+                                    td(class="font-large font-large--red") 7.520.000 đ                     
+                .col-md-12.col-sm-12.text-right.button-group.my-10
+                    form(action="error-page.html")
+                        +buttonForm("button", "Tiếp tục mua hàng",  "index.html")
+                        +buttonForm("submit",  "Thanh toán")
+                    
